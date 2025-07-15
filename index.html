@@ -1,83 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script src="https://test.elkoob.ir/new-eitaa-web-app.js"></script>
-<script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://test.elkoob.ir/new-eitaa-web-app.js"></script>
+    <script>
       window.Eitaa.WebApp.ready();
       window.Eitaa.WebApp.expand();
 
       window.Eitaa.WebApp.disableVerticalSwipes();
-            Eitaa.WebApp.requestFullscreen();
+      Eitaa.WebApp.requestFullscreen();
 
       // window.Eitaa.WebApp.setHeaderColor("#3BB8A9");
     </script>
-  <title>Landscape Game</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: black;
-    }
+    <title>Landscape Game</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: black;
+      }
 
-    .landscape {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-    }
+      .landscape {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+      }
 
-    .rotate-message {
-      display: none;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+      .rotate-message {
+        display: none;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
 
-    .portrait .game-frame {
-      display: none;
-    }
+      .portrait .game-frame {
+        display: none;
+      }
 
-    .portrait .rotate-message {
-      display: block;
-    }
+      .portrait .rotate-message {
+        display: block;
+      }
 
-    iframe {
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <div id="container" class="landscape">
-    <div class="rotate-message">
-      لطفاً گوشی خود را بچرخانید تا بازی در حالت افقی نمایش داده شود 📱↪️
-    </div>
-    <iframe
+      iframe {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="container" class="landscape"> -->
+      <!-- <div class="rotate-message">
+        لطفاً گوشی خود را بچرخانید تا بازی در حالت افقی نمایش داده شود 📱↪️
+      </div> -->
+      <!-- <iframe
       class="game-frame"
       src="https://html5.gamedistribution.com/626030ce36a249729e19df483d7836dc/?utm_source=mahdijabary2000.github.io&utm_medium=fragen&utm_campaign=block-and-redirect"
       width="100%"
       height="100%"
       allowfullscreen
-    ></iframe>
-  </div>
+    ></iframe> -->
+      <iframe
+        id="game-iframe"
+        src="https://games.crazygames.com/en_US/fragen/index.html?czyBoltive_CZY_15200=enabled&amp;czyDynamicPriceFloorVariantsCZY_14537=disabled&amp;czyEPBPooling_CZY_14716=enabled&amp;ssrDevice=desktop&amp;isNewUser=false&amp;skipPrerollFirstSession=true&amp;v=1.335"
+        title="Fragen"
+        scrolling="no"
+        allow="autoplay; payment; fullscreen; microphone; focus-without-user-activation *; screen-wake-lock; gamepad; clipboard-read; clipboard-write; accelerometer; gyroscope; "
+        allowfullscreen=""
+        sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads  allow-popups allow-popups-to-escape-sandbox"
+        loading="eager"
+        importance="high"
+        data-hj-allow-iframe="true"
+        style="
+          border: 0px;
+          margin: 0px;
+          padding: 0px;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          user-select: none;
+        "
+        >Fragen is a marvelous fps game. It can be played here on CrazyGames
+        directly in your browser, for free. You can play this game unblocked on
+        CrazyGames. It includes instructions to get you started. That way, it is
+        easy to see how to play Fragen. Fragen is made with HTML5 technology to
+        work fast in all modern browsers. One of the many advantages about
+        playing Fragen on CrazyGames is that it is available in full-screen
+        mode. The game is available as a HTML5 game and as as an Android game.
+        If you like Fragen, you should try out our other
+        <a
+          href="https://www.crazygames.com/t/first-person-shooter"
+          target="_blank"
+          >first person shooter games</a
+        >
+        or
+        <a
+          href="https://www.crazygames.com/game/shellshockersio"
+          target="_blank"
+          >Shell Shockers</a
+        >
+        and
+        <a href="https://www.crazygames.com/game/hypper-sandbox" target="_blank"
+          >Hypper Sandbox</a
+        >.</iframe
+      >
+    <!-- </div> -->
 
-  <script>
-    function checkOrientation() {
-      const container = document.getElementById("container");
-      if (window.innerHeight > window.innerWidth) {
-        container.classList.add("portrait");
-      } else {
-        container.classList.remove("portrait");
+    <!-- <script>
+      function checkOrientation() {
+        const container = document.getElementById("container");
+        if (window.innerHeight > window.innerWidth) {
+          container.classList.add("portrait");
+        } else {
+          container.classList.remove("portrait");
+        }
       }
-    }
 
-    window.addEventListener("resize", checkOrientation);
-    window.addEventListener("orientationchange", checkOrientation);
-    window.addEventListener("load", checkOrientation);
-  </script>
-</body>
+      window.addEventListener("resize", checkOrientation);
+      window.addEventListener("orientationchange", checkOrientation);
+      window.addEventListener("load", checkOrientation);
+    </script> -->
+  </body>
 </html>

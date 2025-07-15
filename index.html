@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landscape Game</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+    }
+
+    .landscape {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+    }
+
+    .rotate-message {
+      display: none;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .portrait .game-frame {
+      display: none;
+    }
+
+    .portrait .rotate-message {
+      display: block;
+    }
+
+    iframe {
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <iframe src="https://html5.gamedistribution.com/626030ce36a249729e19df483d7836dc/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}" width="800" height="600" scrolling="none" frameborder="0"></iframe>
+  <div id="container" class="landscape">
+    <div class="rotate-message">
+      لطفاً گوشی خود را بچرخانید تا بازی در حالت افقی نمایش داده شود 📱↪️
+    </div>
+    <iframe
+      class="game-frame"
+      src="https://html5.gamedistribution.com/626030ce36a249729e19df483d7836dc/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}"
+      width="100%"
+      height="100%"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <script>
+    function checkOrientation() {
+      const container = document.getElementById("container");
+      if (window.innerHeight > window.innerWidth) {
+        container.classList.add("portrait");
+      } else {
+        container.classList.remove("portrait");
+      }
+    }
+
+    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("orientationchange", checkOrientation);
+    window.addEventListener("load", checkOrientation);
+  </script>
 </body>
 </html>
